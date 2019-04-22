@@ -1,10 +1,5 @@
 def is_name(name):
-    # from re import search
-
-    # name_pattern = '^([А-ЯЁ][а-яё]*|[A-Z][a-z]*)$'
-
     try:
-        # if search(name_pattern, name):  # Первая буква заглавная, остальные маленькие
         if name.istitle():  # Первая буква заглавная, остальные неважно
             result = True
         else:
@@ -41,6 +36,7 @@ def filter_list(some_list):
                 some_list.remove(i)
         except TypeError:
             print(f'Элемент {i} не числовой и не может быть обработан')
+
     return some_list
 
 
