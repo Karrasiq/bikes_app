@@ -8,7 +8,7 @@ def is_name(name):
         print('Неверный тип данных аргумента')
     except Exception as e:
         print('Что-то пошло не так. Класс ошибки ({})'.format(e.__class__))
-    
+
     return result
 
 
@@ -21,7 +21,7 @@ def normalize_full_name(first_name='', last_name=''):
         result = '{}'.format(last_name).title()
     else:
         result = ''
-    
+
     return result
 
 

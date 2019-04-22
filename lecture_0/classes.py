@@ -7,21 +7,19 @@ class Student:
         self.full_name = full_name
         self.course_name = course_name
         self.course_num = 1
-    
+
     def next_course(self):
         if self.course_name is None:
-            raise StudentCourseError('Not have course') 
+            raise StudentCourseError('Not have course')
         elif self.course_num >= 3:
-            raise StudentCourseError('Student have degree') 
+            raise StudentCourseError('Student have degree')
         else:
             self.course_num += 1
-    
 
     def change_course(self, course_name):
         self.course_name = course_name
         self.course_num = 1
 
-    
     def get_diploma(self):
         if self.course_num < 3:
             raise StudentCourseError('Student not have degree')
