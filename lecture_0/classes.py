@@ -2,7 +2,7 @@ class StudentCourseError(Exception):
     pass
 
 
-class Student():
+class Student:
     def __init__(self, full_name, course_name=None):
         self.full_name = full_name
         self.course_name = course_name
