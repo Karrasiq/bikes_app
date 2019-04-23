@@ -13,7 +13,7 @@ def is_name(name):
 
 
 def normalize_full_name(first_name='', last_name=''):
-    return ' '.join([first_name, last_name]).title() if first_name and last_name else ''.join([first_name, last_name]).title()
+    return ' '.join([first_name, last_name]).title().strip()
 
 
 def increase_list(var1, var2, var3):
@@ -21,16 +21,7 @@ def increase_list(var1, var2, var3):
 
 
 def filter_list(list_to_filter):
-    filtered_list = []
-
-    for i in list_to_filter:
-        try:
-            if i > 0:
-                filtered_list.append(i)
-        except TypeError:
-            print(f'Элемент {i} не числовой и не может быть обработан')
-
-    return filtered_list
+    return [i > 0 for i in list_to_filter]
 
 
 def max_list(list_to_extend, var1, var2):
