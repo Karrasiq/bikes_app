@@ -26,7 +26,7 @@ def normalize_full_name(first_name='', last_name=''):
 
 
 def increase_list(var1, var2, var3):
-    return [var1 * 2, var2 * 2]
+    return [var1 * var3, var2 * var3]
 
 
 def filter_list(list_to_filter):
