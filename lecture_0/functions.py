@@ -37,6 +37,8 @@ def filter_list(list_to_filter):
         except TypeError:
             print(f'Элемент {i} не числовой и не может быть обработан')
 
+    return list_to_filter
+
 
 def max_list(list_to_extend, var1, var2):
     try:
