@@ -21,7 +21,7 @@ def increase_list(var1, var2, var3):
 
 
 def filter_list(list_to_filter):
-    return [i > 0 for i in list_to_filter]
+    return [i for i in list_to_filter if i > 0]
 
 
 def max_list(list_to_extend, var1, var2):
