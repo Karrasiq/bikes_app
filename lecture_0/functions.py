@@ -30,14 +30,16 @@ def increase_list(var1, var2, var3):
 
 
 def filter_list(list_to_filter):
-    for i in list_to_filter.copy():
+    filtered_list = []
+
+    for i in list_to_filter:
         try:
-            if i <= 0:
-                list_to_filter.remove(i)
+            if i > 0:
+                filtered_list.append(i)
         except TypeError:
             print(f'Элемент {i} не числовой и не может быть обработан')
 
-    return list_to_filter
+    return filtered_list
 
 
 def max_list(list_to_extend, var1, var2):
@@ -55,7 +57,7 @@ def get_dictionary(key, value):
 
 
 def set_dictionary(dict_to_extend, key, value):
-    return dict_to_extend.update({key: value})
+    dict_to_extend.update({key: value})
 
 
 def swap_dictionary(dict_to_swap):
