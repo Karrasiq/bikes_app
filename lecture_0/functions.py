@@ -13,16 +13,7 @@ def is_name(name):
 
 
 def normalize_full_name(first_name='', last_name=''):
-    if first_name and last_name:
-        result = '{} {}'.format(first_name, last_name).title()
-    elif first_name:
-        result = '{}'.format(first_name).title()
-    elif last_name:
-        result = '{}'.format(last_name).title()
-    else:
-        result = ''
-
-    return result
+    return ' '.join([first_name, last_name]).title() if first_name and last_name else ''.join([first_name, last_name]).title()
 
 
 def increase_list(var1, var2, var3):
