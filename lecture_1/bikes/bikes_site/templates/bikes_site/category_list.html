@@ -1,0 +1,14 @@
+{% extends "master.html" %}
+
+{% block page_title %}
+Categories
+{% endblock %}
+
+{% block page_content %}
+    <h1>Categories</h1>
+    <ul>
+        {% for category in object_list %}
+            <li>{{ category.name }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
