@@ -12,24 +12,12 @@ def index(request):
 
 
 class CategoriesListView(ListView):
-    model = Category
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        return context
+    queryset = Category.objects.all()
 
 
 class CategoryView(DetailView):
     model = Category
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        return context
-
 
 class MotobikeView(DetailView):
     model = Motobike
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        return context
