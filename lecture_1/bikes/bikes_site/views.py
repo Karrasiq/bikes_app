@@ -11,7 +11,7 @@ def index(request):
 
 
 class CategoriesListView(ListView):
-    model = get_object_or_404(Category)
+    model = Category
     template_name = 'categories_list.html'
 
     def serialize_categories_list(self, queryset):
@@ -35,7 +35,7 @@ class CategoriesListView(ListView):
 
 
 class CategoryView(DetailView):
-    model = get_object_or_404(Category)
+    model = Category
     template_name = 'category_detail.html'
 
     def serialize_category(self, moto_obj):
@@ -62,7 +62,7 @@ class CategoryView(DetailView):
 
 
 class MotobikeView(DetailView):
-    model = get_object_or_404(Motobike)
+    model = Motobike
     template_name = 'motobike_detail.html'
 
     def get_context_data(self, **kwargs):
