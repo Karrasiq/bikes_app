@@ -17,8 +17,8 @@ class CategoriesListView(ListView):
     def serialize_categories_list(self, queryset):
         return list(
             map(
-                lambda itm: {
-                    'name': itm.name,
+                lambda queryset_object: {
+                    'name': queryset_object.name,
                 },
                 queryset
             )
@@ -38,23 +38,23 @@ class CategoryView(DetailView):
     model = Category
     template_name = 'category_detail.html'
 
-    def serialize_category(self, moto_obj):
+    def serialize_category(self, motobike_querylist):
         return list(
             map(
-                lambda itm: {
-                    'name': itm.name,
-                    'vendor': itm.company.name,
-                    'category': itm.category.name,
-                    'description': itm.description,
+                lambda motobike_object: {
+                    'name': motobike_object.name,
+                    'vendor': motobike_object.company.name,
+                    'category': motobike_object.category.name,
+                    'description': motobike_object.description,
                 },
-                moto_obj
+                motobike_querylist
             )
         )
 
     def get_context_data(self, **kwargs):
-        obj = kwargs.get('object')
-        bikes_obj = Motobike.objects.filter(category=obj)
-        data = self.serialize_category(bikes_obj)
+        category_object = kwargs.get('object')
+        motobike_object = Motobike.objects.filter(category=category_object)
+        data = self.serialize_category(motobike_object)
         return data
 
     def render_to_response(self, context, **response_kwargs):
@@ -66,13 +66,13 @@ class MotobikeView(DetailView):
     template_name = 'motobike_detail.html'
 
     def get_context_data(self, **kwargs):
-        obj = kwargs.get('object')
+        motobike_object = kwargs.get('object')
 
         return {
-            'name': obj.name,
-            'vendor': obj.company.name,
-            'category': obj.category.name,
-            'description': obj.description,
+            'name': motobike_object.name,
+            'vendor': motobike_object.company.name,
+            'category': motobike_object.category.name,
+            'description': motobike_object.description,
         }
 
     def render_to_response(self, context, **response_kwargs):
