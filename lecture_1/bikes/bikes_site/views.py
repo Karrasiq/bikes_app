@@ -1,6 +1,7 @@
 from django.http import HttpResponse, JsonResponse
 from django.views.generic import ListView, DetailView
 from .models import Category, Motobike
+
 # import json
 # from django.shortcuts import get_object_or_404
 
@@ -16,12 +17,7 @@ class CategoriesListView(ListView):
 
     def serialize_categories_list(self, queryset):
         return list(
-            map(
-                lambda queryset_object: {
-                    'name': queryset_object.name,
-                },
-                queryset
-            )
+            map(lambda queryset_object: {'name': queryset_object.name}, queryset)
         )
 
     def get_context_data(self, **kwargs):
@@ -47,7 +43,7 @@ class CategoryView(DetailView):
                     'category': motobike_object.category.name,
                     'description': motobike_object.description,
                 },
-                motobike_querylist
+                motobike_querylist,
             )
         )
 

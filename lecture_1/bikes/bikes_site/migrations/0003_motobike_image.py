@@ -5,14 +5,12 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('bikes_site', '0002_auto_20190505_2238'),
-    ]
+    dependencies = [('bikes_site', '0002_auto_20190505_2238')]
 
     operations = [
         migrations.AddField(
             model_name='motobike',
             name='image',
             field=models.ImageField(default='', upload_to='bike_images'),
-        ),
+        )
     ]
