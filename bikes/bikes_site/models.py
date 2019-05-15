@@ -24,9 +24,9 @@ class Product(models.Model):
     name = models.CharField(max_length=100)
     company = models.ForeignKey(Company, models.CASCADE)
     category = models.ForeignKey(Category, models.CASCADE)
-    description = models.TextField(default='', null=True)
+    description = models.TextField(default='', blank=True)
     price = models.DecimalField(max_digits=12, decimal_places=2, default=0)
-    image = models.ImageField(upload_to='bike_images', default='')
+    image = models.ImageField(upload_to='bike_images', null=True)
 
     modified = models.DateField(auto_now=True)
     created = models.DateField(auto_now_add=True)
